@@ -1,0 +1,8 @@
+{
+  "name": "mobiwound",
+  "app_id": "2f3e1d0e",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
