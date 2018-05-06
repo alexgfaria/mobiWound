@@ -15,9 +15,32 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   selector: 'page-camara',
   templateUrl: 'camara.html',
 })
-export class CamaraPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+
+
+export class CamaraPage {
+  myphoto: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  }
+
+  takePicture() {
+    const options: CameraOptions = {
+      quality: 70,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
   }
 
   ionViewDidLoad() {
