@@ -16,24 +16,24 @@
 
   <br>
   <br>
-  <br>
-  <br>
+
 
   <button ion-button icon-left block large (click)="takePicture()">
   <ion-icon name="camera"></ion-icon>
   Registar ferida
-</button>
+  </button>
 
-<p align="center"><img src="{{ myphoto }}"></p>
+  <img [src]="base64Image"/>
 
 
+
   <br>
   <br>
-  <br>
-  <br>
-  <button ion-button icon-left block large>
-  <ion-icon name="grid"></ion-icon>
-  Medir ferida
-</button>
+
+
+  <button ion-button icon-left block large (click)="takePicture()">
+    <ion-icon name="grid"></ion-icon>
+    Medir ferida
+  </button>
 
 </ion-content>
