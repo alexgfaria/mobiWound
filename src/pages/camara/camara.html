@@ -36,4 +36,20 @@
     Medir ferida
   </button>
 
+  <br>
+  <br>
+  <button ion-button full (click)="viewDataGyro()">Começar</button>
+  <div full> <h1> X: {{x}} </h1></div>
+  <div full> <h1> Y: {{y}} </h1></div>
+  <div full> <h1> Z: {{z}} </h1></div>
+  <br>
+  <br>
+
+  <button ion-button icon-left block large [navPush]="patientPage">
+    <ion-icon name="body"></ion-icon>
+    Patient info
+  </button>
+
+
+
 </ion-content>

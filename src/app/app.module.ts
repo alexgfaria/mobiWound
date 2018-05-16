@@ -8,13 +8,16 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { CamaraPage } from '../pages/camara/camara';
+import { PatientPage } from '../pages/patient/patient';
+import { Gyroscope, GyroscopeOrientation} from '@ionic-native/gyroscope';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    CamaraPage
+    CamaraPage,
+    PatientPage
   ],
   imports: [
     BrowserModule,
@@ -25,12 +28,14 @@ import { CamaraPage } from '../pages/camara/camara';
     MyApp,
     HomePage,
     LoginPage,
-    CamaraPage
+    CamaraPage,
+    PatientPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
+    Gyroscope,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
