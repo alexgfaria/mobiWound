@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CamaraPage } from '../camara/camara';
+//import { CamaraPage } from '../camara/camara';
+import { PatientListPage } from '../patient-list/patient-list';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,24 +16,22 @@ import { CamaraPage } from '../camara/camara';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  camaraPage = CamaraPage;
+  patientListPage = PatientListPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+  openPatientListPage(){
+    //this.navCtrl.push(PatientListPage)
+  this.navCtrl.setRoot(PatientListPage);
+  this.navCtrl.popToRoot();
+}
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  ionViewCanLeave() {
-   console.log("ionViewEntered")
-
-        this.navCtrl.setRoot(CamaraPage);
-        this.navCtrl.popToRoot();
-        console.log("ionViewEntered - Standard")
-
-
-    return true;
-  }
 
 }

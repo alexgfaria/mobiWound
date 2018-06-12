@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { PatientPage } from '../patient/patient';
-import { GiroscopioPage } from '../giroscopio/giroscopio';
+//import { PatientPage } from '../patient/patient';
+//import { GiroscopioPage } from '../giroscopio/giroscopio';
 
 
 @IonicPage()
@@ -15,15 +15,15 @@ import { GiroscopioPage } from '../giroscopio/giroscopio';
 
 
 export class CamaraPage {
-  patientPage: PatientPage;
+  //patientPage: PatientPage;
   base64Image: string;
-  giroscopioPage: GiroscopioPage;
+  //giroscopioPage: GiroscopioPage;
 
   constructor( public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
 
 }
 
-  takePicture() {
+/*  takePicture() {
     const options: CameraOptions = {
       quality: 70,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -38,7 +38,7 @@ export class CamaraPage {
     }, (err) => {
       // Handle error
     });
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CamaraPage');

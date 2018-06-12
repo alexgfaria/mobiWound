@@ -7,9 +7,9 @@ import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { PatientListPage } from '../pages/patient-list/patient-list';
 import { CamaraPage } from '../pages/camara/camara';
-import { PatientPage } from '../pages/patient/patient';
-import { GiroscopioPage } from '../pages/giroscopio/giroscopio';
+import { PatienthrPage } from '../pages/patienthr/patienthr';
 import { Gyroscope, GyroscopeOrientation} from '@ionic-native/gyroscope';
 
 @NgModule({
@@ -18,8 +18,8 @@ import { Gyroscope, GyroscopeOrientation} from '@ionic-native/gyroscope';
     HomePage,
     LoginPage,
     CamaraPage,
-    PatientPage,
-    GiroscopioPage
+    PatientListPage,
+    PatienthrPage
   ],
   imports: [
     BrowserModule,
@@ -31,8 +31,8 @@ import { Gyroscope, GyroscopeOrientation} from '@ionic-native/gyroscope';
     HomePage,
     LoginPage,
     CamaraPage,
-    PatientPage,
-    GiroscopioPage
+    PatientListPage,
+    PatienthrPage
   ],
   providers: [
     StatusBar,
