@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as $ from 'jquery';
+
+
+
+
 
 /**
  * Generated class for the PatienthrPage page.
@@ -15,20 +20,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PatienthrPage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
 
 
 
-//JS PATIENT HR--------------------------------
-/*
+
+
+
   $(document).ready(function () {
 
-      $(".patient-records").sortable({
+    /*  $(".patient-records").sortable({
           handle: ".panel-heading",
           items: "div.panel",
           tolerance: "pointer"
       });
+
+    */
 
       $('.patient-records .panel-heading span.remove').on('click', function () {
 
@@ -53,7 +61,7 @@ export class PatienthrPage {
           return false;
       });
 
-      $('#timeline-example').ehrscapeTimeline();
+      //$('#timeline-example').ehrscapeTimeline();
 
       // ehrscape API
       var baseUrl = "https://rest.ehrscape.com/rest/v1";
@@ -681,25 +689,5 @@ export class PatienthrPage {
           });
       });
   });
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PatienthrPage');
-  }
-
+}
 }

@@ -10,7 +10,8 @@ import { LoginPage } from '../pages/login/login';
 import { PatientListPage } from '../pages/patient-list/patient-list';
 import { CamaraPage } from '../pages/camara/camara';
 import { PatienthrPage } from '../pages/patienthr/patienthr';
-import { Gyroscope, GyroscopeOrientation} from '@ionic-native/gyroscope';
+import { Gyroscope} from '@ionic-native/gyroscope';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Gyroscope, GyroscopeOrientation} from '@ionic-native/gyroscope';
     SplashScreen,
     Camera,
     Gyroscope,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+
   ]
 })
 export class AppModule {}
