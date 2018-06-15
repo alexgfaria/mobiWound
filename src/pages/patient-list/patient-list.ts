@@ -22,12 +22,17 @@ export class PatientListPage {
 
 
 
-  openPatientHRPage(){
-    this.navCtrl.push(PatienthrPage);
-  }
+  openPatientHRPage(ehrId){
+    console.log('list=>>'+ehrId);
+
+    this.navCtrl.push(PatienthrPage, {
+      data: ehrId
+  });
+}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad Patient List Page');
+    
   }
 
 

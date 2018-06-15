@@ -12,39 +12,27 @@
 </ion-header>
 
 
-
 <ion-content padding>
-
-    <div ion-grid>
-        <div ion-row>
-            <div ion-col col-md-9>
-                <div class="well demographics" style="position: relative">
-                    <div ion-row>
-                        <div ion-col col-md-3>
-                            <div class="patient-pic"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="patient-info">
-                                <h4 id="patient-name"></h4>
-                                <p>Age: <span class="patient-age"></span></p>
-                                <p>Gender: <span id="patient-gender"></span></p>
-                                <p>DOB: <span class="patient-dob"></span></p>
-                                <p>Address: <span> - </span></p>
-                            </div>
-                        </div>
-                        <div ion-col col-md-3>
-                            <div class="ver-spacer left">
-                                <div class="mask"></div>
-                            </div>
-                            <div class="patient-team">
-                                <p>Healthcare team:</p>
-                                <div class="doc-pic"></div>
-                            </div>
-                        </div>
+    <ion-grid>
+        <ion-row>
+            <div class="well demographics" style="position: relative">
+                <ion-row>
+                <ion-col>
+                    <div class="patient-pic"></div>
+                </ion-col>
+                <ion-col>
+                    <div class="patient-info" style='margin-top: 30px;'>
+                        <h4 id="patient-name"></h4>
+                        <p>Age: <span class="patient-age"></span></p>
+                        <p>Gender: <span id="patient-gender"></span></p>
+                        <p>DOB: <span class="patient-dob"></span></p>
+                        <p>Address: <span> - </span></p>
                     </div>
-                </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
                 <div class="patient-stats well" style="position: relative">
-                    <div ion-row>
+                    
                         <div class="col-md-8 bordered">
                             <div class="row" style="min-height: 57px;">
                                 <div class="col-md-4 bordered centered" style="min-height: 67px;">
@@ -111,7 +99,7 @@
                                     </div>
                                 </div>
                         </div>
-                    </div>
+                    
                 </div>
                 <div class="patient-records">
                     <div class="panel panel-primary" style="width: 97%;">
@@ -265,8 +253,8 @@
                                 <div class="last-cw"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    
+                
             </div>
             <div ion-col col-md-3>
                 <div class="panel panel-default">
@@ -296,7 +284,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
     </div>
     <a href="#top" id="smoothscroll" title="Back to top"></a>
     

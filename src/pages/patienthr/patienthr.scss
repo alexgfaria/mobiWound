@@ -118,14 +118,14 @@ page-patienthr {
   /* main-content */
 
   .patient-pic{
-      xbackground: url('assets/imgs/mary.png') center top no-repeat;
+      background: url('/assets/imgs/female.png') center top no-repeat;
       border: 3px solid #E6E9ED;
       display: block;
       height: 125px;
       margin: 25px auto;
       width: 125px;
       border-radius: 50%;
-      -webkit-transition: all 0.2s ease-out;
+
   }
 
   .patient-pic:hover{
