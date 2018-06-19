@@ -3,10 +3,10 @@
  */
 
 
-var cucu = (function ( $, window, document, undefined ) {
+var cucu = function ( $, window, document, undefined ) {
 
     var pluginName = "ehrscapeTimeline",
-        defaults = {a
+        defaults = {
             baseUrl: "https://rest.ehrscape.com/rest/v1",
             ehrId: "6f81d77a-26ef-4cf4-926f-40ccfafd8a1f",
             username: "guidemo",
@@ -337,7 +337,7 @@ var cucu = (function ( $, window, document, undefined ) {
                 var value = text.slice(index+2, text.length);
 
                 $(el).html('<span>'+title+'</span>'+value);
-                //else $(el).html('<div class="longtext-title">'+title+'</div><br><div>'+value+'</div>');
+                
             }
 
         },
@@ -385,4 +385,4 @@ var cucu = (function ( $, window, document, undefined ) {
         });
     };
 
-})( jQuery, window, document );
+}
