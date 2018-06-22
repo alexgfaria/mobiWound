@@ -11,6 +11,8 @@ import { PatientListPage } from '../pages/patient-list/patient-list';
 import { CamaraPage } from '../pages/camara/camara';
 import { PatienthrPage } from '../pages/patienthr/patienthr';
 import { Gyroscope} from '@ionic-native/gyroscope';
+import { WoundsPage } from '../pages/wounds/wounds';
+import { WoundsListPage } from '../pages/wounds-list/wounds-list';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { Gyroscope} from '@ionic-native/gyroscope';
     LoginPage,
     CamaraPage,
     PatientListPage,
+    WoundsPage,
+    WoundsListPage,
     PatienthrPage
   ],
   imports: [
@@ -33,6 +37,8 @@ import { Gyroscope} from '@ionic-native/gyroscope';
     LoginPage,
     CamaraPage,
     PatientListPage,
+    WoundsPage,
+    WoundsListPage,
     PatienthrPage
   ],
   providers: [

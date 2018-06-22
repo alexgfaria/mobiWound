@@ -1,6 +1,8 @@
 <ion-header>
+    
   <ion-navbar>
     <ion-title>Patient HR</ion-title>
+    
   </ion-navbar>
 </ion-header>
 
@@ -105,17 +107,21 @@
                                     </h3>
               </div>
               <div class="panel-body">
-                <button ion-button icon-left block large (click)="takePicture()">
-                                                <ion-icon name="camera"></ion-icon>
-                                                Register Wound
-                                                </button>
-                                                <img [src]="base64Image"/>
+               <!-- <button ion-button icon-left block large (click)="takePicture()">
+                    <ion-icon name="camera"></ion-icon>
+                    Register Wound
+                    </button>
+                    <img [src]="base64Image"/>-->
+                    <button ion-button icon-left block large (click)="openWoundsListPage(ehrId)">
+                        <ion-icon name="add"></ion-icon>
+                      Register Wound
+                    </button>
               </div>
 
             </div>
 
 
-
+            <!--
 
             <div class="panel panel-primary" style="width: 100%;">
               <div class="panel-heading">
@@ -138,6 +144,7 @@
                 </div>
               </div>
             </div>
+          -->
             <div class="panel panel-info" style="width: 100%;">
               <div class="panel-heading">
                 <h3 class="panel-title">Laboratory Results

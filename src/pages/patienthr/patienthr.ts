@@ -3,16 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 //import { PatientListPage } from '../patientlist/patientlist';
 import * as $ from 'jquery';
-
-
-
-declare var cucu;
-
-
-
-
-
-
+import { WoundsListPage } from '../wounds-list/wounds-list';
+//import * as morris from '../assets/js/morris.min';
 
 @IonicPage()
 @Component({
@@ -45,7 +37,7 @@ export class PatienthrPage {
 
 patientDataFunction(){
 
-    console.log(this.ehrId);
+    console.log("patient ->>>" + this.ehrId);
         /*  $(".patient-records").sortable({
               handle: ".panel-heading",
               items: "div.panel",
@@ -53,12 +45,6 @@ patientDataFunction(){
           });
 
         */
-
-
-
-
-
-
 
           $('.patient-records .panel-heading span.remove').on('click', function () {
 
@@ -722,23 +708,19 @@ patientDataFunction(){
 
 
 
-takePicture() {
-    const options: CameraOptions = {
-      quality: 70,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
 
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      // Handle error
-    });
+
+
+
+
+
+openWoundsListPage(ehrId){
+    console.log("patient para wounds -->"+ehrId);
+
+    this.navCtrl.push(WoundsListPage, {
+        data: ehrId
+    });  
 }
-
 
 
 
