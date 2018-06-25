@@ -22,6 +22,9 @@ export class PatientListPage {
 
 
 
+  
+
+
   openPatientHRPage(ehrId){
     console.log('list=>>'+ehrId);
 

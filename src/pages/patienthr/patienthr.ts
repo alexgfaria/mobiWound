@@ -27,13 +27,7 @@ export class PatienthrPage {
 
 
 
-
-
-
-
-
-
-
+  
 
 patientDataFunction(){
 
@@ -103,6 +97,9 @@ patientDataFunction(){
               });
           }
 
+
+
+          
           function patientData() {
               return $.ajax({
                   url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
@@ -696,17 +693,6 @@ patientDataFunction(){
           });
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

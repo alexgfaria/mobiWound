@@ -13,6 +13,8 @@ import { PatienthrPage } from '../pages/patienthr/patienthr';
 import { Gyroscope} from '@ionic-native/gyroscope';
 import { WoundsPage } from '../pages/wounds/wounds';
 import { WoundsListPage } from '../pages/wounds-list/wounds-list';
+import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { WoundsListPage } from '../pages/wounds-list/wounds-list';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +51,7 @@ import { WoundsListPage } from '../pages/wounds-list/wounds-list';
     Camera,
     Gyroscope,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-
+    RemoteServiceProvider
   ]
 })
 export class AppModule {}

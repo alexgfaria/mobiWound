@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WoundsPage } from '../wounds/wounds';
+import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
 import * as $ from 'jquery';
-
-/**
- * Generated class for the WoundsListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 
 
 @IonicPage()
@@ -19,115 +12,55 @@ import * as $ from 'jquery';
 })
 export class WoundsListPage {
   ehrId : String;
+  items : any;
+  posts :any;
+  sessionId : String;
+  compositionUid : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private remoteServiceProvider : RemoteServiceProvider) {
     this.ehrId = navParams.get('data');
     console.log('feridas ehrid->>' + this.ehrId);
-    this.listagem(this.ehrId);
+    //this.listagem(this.ehrId);
+    this.getWounds();
   }
 
-  //console.log("tou aki" + ehrId);
+  getWounds(){
 
+    //this.remoteServiceProvider.getPosts(this.ehrId,sessionId).subscribe((data)=>{
+      this.remoteServiceProvider.loginUser().then(data => {
+        //this.posts = data;
+        this.sessionId = data.sessionId;
+        //console.log("session do login" + data.sessionId);
+        this.remoteServiceProvider.getWoundList(this.ehrId,this.sessionId).then(data => {
+          //this.posts = data;
 
-
-
-
-
-listagem(ehrId){
-  console.log("listagem wonds -->" + ehrId);
-
-
-// ehrscape API
-var baseUrl = "https://rest.ehrscape.com/rest/v1";
-
-var username = 'samueldemo';
-var password = 'samuel1demo';
-//var ehrId = this.ehrId;
-
-var sessionId;
-
-function login() {
-    return $.ajax({
-        type: "POST",
-        url: baseUrl + "/session?" + $.param({username: username, password: password}),
-        success: function (res) {
-            sessionId = res.sessionId;
-        }
-    });
-}
-
-function logout() {
-    return $.ajax({
-        type: "DELETE",
-        url: baseUrl + "/session",
-        headers: {
-            "Ehr-Session": sessionId
-        }
-    });
-}
-
-function woundComposition(ehrId) {
-  console.log("cernas -->" + ehrId);
-  
-  return $.ajax({
-      url: baseUrl + "/view/" + ehrId + "/woundCompositions",
-      type: 'GET',
-      headers: {
-          "Ehr-Session": sessionId
-      },
-      success: function (data) {
-          //woundList = data[0];
-
-          console.log("ferida ->" + data[0].templateId);
-          
-
-          var html = "";
-
-
+          this.items = data;
+          /*
           for (var i = 0; i < data.length; i++){
-            html += '<ion-list>';
-            html += '<button ion-item (click)="goToWoundPage(' + '\'' + data[i].compositionUid + '\'' + ')">';
-            html += '<div class="compositionsStyle"><h3>' + data[i].templateId + ' #' + (i+1) + '</h3> <h4> Date: ' + data[i].date + '</h4><p> Composition ID: ' + data[i].compositionUid + '</p></div><hr>';
-            html += '</button>';
-            html += '</ion-list>';
-        }
-        console.log(html);
+            this.items.push (data[i].templateId+" \n "+data[i].date)
+          }
+          */
+          //this.items = data[0].templateId;
+        });
         
-
-        $("#woundList").append(html);
-
-
-
-
-          // Name
-          //$("#items").html(woundCompositions);
-        }
       });
-    
-  }
-  
-  
-// display page
-login().done(function () {
-  console.log("3cernas -->"+ehrId);
-
-  $.when(
-    woundComposition(ehrId)
-
-  ).then(logout)
-});
-
-
+      console.log("session on getPosts" + this.sessionId);
+      
+      
+ 
 
 }
 
 
-goToWoundPage(compositionUid) {
-    
+goToWoundPage(ehrId: String, compositionUid: String) {
     this.navCtrl.push(WoundsPage, {
-      data: compositionUid
+      idPaciente: ehrId,
+      idComposition: compositionUid
   });
-  console.log('vai para wounds -> ' + compositionUid);
+
+  console.log('vai para wounds ehrid -> ' + ehrId);
+  console.log('vai para wounds composition -> ' + compositionUid);
   }
 
 
@@ -135,9 +68,6 @@ goToWoundPage(compositionUid) {
   ionViewDidLoad() {
     console.log('ionViewDidLoad WoundsPage');
   }
-
-
-
 
 
  
