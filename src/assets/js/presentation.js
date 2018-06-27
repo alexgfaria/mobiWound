@@ -46,6 +46,12 @@ var PresentationRenderer = autoInit(function () {
     }
 
     function toLinkTag(url, mediaType) {
+
+        if(mediaType.toLowerCase().indexOf("image") >= 0){
+            return '<img src="'+url+'" />';
+
+        }
+
         var mtIcons = {'application/pdf': 'fa-file-pdf-o'};
         var icon='';
             if(mediaType && mtIcons[mediaType]){

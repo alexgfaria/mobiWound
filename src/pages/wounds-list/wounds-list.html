@@ -19,10 +19,10 @@
 
 
     <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="goToWoundPage(ehrId, item.compositionUid)">
+        <button ion-item *ngFor="let item of items" (click)="goToWoundPage(ehrId, item.compositionUid,item.templateId)">
          <div class="compositionsStyle">{{item.templateId}}</div>
-         <div class="compositionsStyle">{{item.date}}</div>
-         <div class="compositionsStyle">{{item.compositionUid}}</div>
+         <div class="compositionsStyleDATE">{{item.date}}</div>
+         <div class="compositionsStyleID">{{item.compositionUid}}</div>
         </button>  
       </ion-list>
 

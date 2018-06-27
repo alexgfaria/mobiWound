@@ -10,8 +10,8 @@ import { PatientListPage } from '../pages/patient-list/patient-list';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
-  //rootPage:any = PatientListPage;
+  //rootPage:any = HomePage;
+  rootPage:any = PatientListPage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

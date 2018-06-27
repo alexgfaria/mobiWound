@@ -28,7 +28,7 @@ export class WoundsListPage {
   getWounds(){
 
     //this.remoteServiceProvider.getPosts(this.ehrId,sessionId).subscribe((data)=>{
-      this.remoteServiceProvider.loginUser().then(data => {
+      this.remoteServiceProvider.loginUser().then(data  => {
         //this.posts = data;
         this.sessionId = data.sessionId;
         //console.log("session do login" + data.sessionId);
@@ -53,10 +53,11 @@ export class WoundsListPage {
 }
 
 
-goToWoundPage(ehrId: String, compositionUid: String) {
+goToWoundPage(ehrId: String, compositionUid: String, templateId: String) {
     this.navCtrl.push(WoundsPage, {
       idPaciente: ehrId,
-      idComposition: compositionUid
+      idComposition: compositionUid,
+      templateId: templateId
   });
 
   console.log('vai para wounds ehrid -> ' + ehrId);

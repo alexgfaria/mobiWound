@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+//import { Camera, CameraOptions } from '@ionic-native/camera';
 //import { PatientListPage } from '../patientlist/patientlist';
 import * as $ from 'jquery';
 import { WoundsListPage } from '../wounds-list/wounds-list';
-//import * as morris from '../assets/js/morris.min';
+import * as morris from '../../assets/js/morris.min';
 
 @IonicPage()
 @Component({
@@ -16,17 +16,17 @@ export class PatienthrPage {
     ehrId : string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.ehrId = navParams.get('data');
     console.log(this.ehrId);
     this.patientDataFunction();
-
-
 
   }
 
 
 
+
+  
   
 
 patientDataFunction(){
@@ -531,9 +531,9 @@ patientDataFunction(){
 
           function getAge(dateString) {
               var now = new Date();
-              var today = new Date(now.getYear(), now.getMonth(), now.getDate());
+              var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-              var yearNow = now.getYear();
+              var yearNow = now.getFullYear();
               var monthNow = now.getMonth();
               var dateNow = now.getDate();
 
@@ -542,7 +542,7 @@ patientDataFunction(){
                   dateString.substring(3, 5)
               );
 
-              var yearDob = dob.getYear();
+              var yearDob = dob.getFullYear();
               var monthDob = dob.getMonth();
               var dateDob = dob.getDate();
               var age = {};
